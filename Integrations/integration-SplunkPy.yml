@@ -47,6 +47,11 @@ configuration:
   defaultvalue: ""
   type: 0
   required: false
+- display: 'TimeZone hour difference - in minutes'
+  name: timezonediff
+  defaultvalue: ""
+  type: 0
+  required: false
 script:
   script: |-
     import splunklib.client as client
@@ -189,6 +194,9 @@ script:
 
         incidents = []
         t = datetime.utcnow()
+        timezone_diff = demisto.params()['timezonediff']
+        if len(timezone_diff) > 0:
+            t = t - timedelta(minutes=int(timezone_diff))
         now = t.strftime("%Y-%m-%dT%H:%M:%S")
         if len(lastRun) == 0:
             t = t - timedelta(minutes=10)
