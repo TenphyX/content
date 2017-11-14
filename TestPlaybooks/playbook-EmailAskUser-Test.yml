@@ -1,0 +1,118 @@
+id: EmailAskUser-Test
+version: -1
+name: EmailAskUser-Test
+starttaskid: "0"
+tasks:
+  "0":
+    id: "0"
+    taskid: dc36fe1b-feef-4e3b-8454-e0224c2c2de7
+    type: start
+    task:
+      id: dc36fe1b-feef-4e3b-8454-e0224c2c2de7
+      version: -1
+      name: ""
+      iscommand: false
+      brand: ""
+    nexttasks:
+      '#none#':
+      - "1"
+    view: |-
+      {
+        "position": {
+          "x": 50,
+          "y": 50
+        }
+      }
+  "1":
+    id: "1"
+    taskid: e27ce280-06f9-474d-8542-e587bd56e157
+    type: regular
+    task:
+      id: e27ce280-06f9-474d-8542-e587bd56e157
+      version: -1
+      name: Sent email
+      scriptName: EmailAskUserFix
+      type: regular
+      iscommand: false
+      brand: ""
+    nexttasks:
+      '#none#':
+      - "2"
+    scriptarguments:
+      additionalOptions: ""
+      attachIds: ""
+      bodyType: ""
+      email: ${inputs.email}
+      message: this is a test email
+      option1: ""
+      option2: ""
+      replyAddress: ""
+      roles: ""
+      subject: this is a test email
+      task: "2"
+    view: |-
+      {
+        "position": {
+          "x": 50,
+          "y": 195
+        }
+      }
+  "2":
+    id: "2"
+    taskid: 50b6a287-c1b9-473f-8a88-66044c6f78c3
+    type: regular
+    task:
+      id: 50b6a287-c1b9-473f-8a88-66044c6f78c3
+      version: -1
+      name: Wait
+      type: regular
+      iscommand: false
+      brand: ""
+    nexttasks:
+      '#none#':
+      - "3"
+    view: |-
+      {
+        "position": {
+          "x": 50,
+          "y": 370
+        }
+      }
+  "3":
+    id: "3"
+    taskid: e873b2b5-23d0-484d-88fc-94ea5172fcf3
+    type: regular
+    task:
+      id: e873b2b5-23d0-484d-88fc-94ea5172fcf3
+      version: -1
+      name: Close
+      scriptName: CloseInvestigation
+      type: regular
+      iscommand: false
+      brand: ""
+    scriptarguments:
+      notes: ""
+      reason: ""
+    view: |-
+      {
+        "position": {
+          "x": 50,
+          "y": 545
+        }
+      }
+view: |-
+  {
+    "linkLabelsPosition": {},
+    "paper": {
+      "dimensions": {
+        "height": 590,
+        "width": 380,
+        "x": 50,
+        "y": 50
+      }
+    }
+  }
+inputs:
+- key: email
+  value: thisisnothere@demisto.com
+  description: ""

@@ -132,6 +132,9 @@
         },
         {
             "playbookID": "ProofpointDecodeURL-Test"
+        },
+        {
+            "playbookID": "EmailAskUser-Test"
         }
     ],
     "skipped": [
