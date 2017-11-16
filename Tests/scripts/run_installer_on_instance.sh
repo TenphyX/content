@@ -24,7 +24,7 @@ sleep 90s
 
 echo "create installer files folder"
 ssh ${USER}@${PUBLIC_IP} 'mkdir -p ~/installer_files'
-
+echo "####### 1 #######"
 scp ${INSTALLER} ${USER}@${PUBLIC_IP}:~/installer_files/installer.sh
 
 echo "get installer and run installation script"
@@ -32,7 +32,13 @@ INSTALL_COMMAND_Y="cd ~/installer_files \
     && chmod +x installer.sh \
     && sudo ./installer.sh -- -y -do-not-start-server"
 
+echo "###### ls ########"
+ls
+echo "##############"
+echo "####### 2 #######"
+
 ssh -t ${USER}@${PUBLIC_IP} ${INSTALL_COMMAND_Y}
+echo "####### 3 #######"
 
 echo "server is ready to start!"
 
