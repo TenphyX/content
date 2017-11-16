@@ -25,12 +25,12 @@ sleep 90s
 echo "create installer files folder"
 ssh ${USER}@${PUBLIC_IP} 'mkdir -p ~/installer_files'
 echo "####### 1 #######"
-scp ${INSTALLER} ${USER}@${PUBLIC_IP}:~/installer_files/installer.sh
+scp ${INSTALLER} ${USER}@${PUBLIC_IP}:~/installer_files/demistoserver.sh
 
 echo "get installer and run installation script"
 INSTALL_COMMAND_Y="cd ~/installer_files \
-    && chmod +x installer.sh \
-    && sudo ./installer.sh -- -y -do-not-start-server"
+    && chmod +x demistoserver.sh \
+    && sudo ./demistoserver.sh -- -y -do-not-start-server"
 
 echo "###### ls ########"
 ls
