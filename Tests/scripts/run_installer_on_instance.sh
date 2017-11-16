@@ -28,7 +28,7 @@ ssh ${USER}@${PUBLIC_IP} 'mkdir -p ~/installer_files'
 scp ${INSTALLER} ${USER}@${PUBLIC_IP}:~/installer_files/installer.sh
 
 echo "## 1"
-INSTALL_COMMAND_X="ls ~/installer_files"
+INSTALL_COMMAND_X="ls -la ~/installer_files"
 ssh -t ${USER}@${PUBLIC_IP} ${INSTALL_COMMAND_X}
 echo "## 2"
 
