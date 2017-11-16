@@ -34,8 +34,8 @@ echo "## 2"
 
 echo "get installer and run installation script"
 INSTALL_COMMAND_Y="cd ~/installer_files \
-    && chmod +x installer.sh \
-    && sudo installer.sh -- -y -do-not-start-server"
+    && chmod +x ~/installer_files/installer.sh \
+    && sudo ~/installer_files/installer.sh -- -y -do-not-start-server"
 
 ssh -t ${USER}@${PUBLIC_IP} ${INSTALL_COMMAND_Y}
 
